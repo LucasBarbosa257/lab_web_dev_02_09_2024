@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFest 2024</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-gray-900 text-white py-8 text-center">
+        <h1 class="text-4xl font-bold">TechFest 2024</h1>
+        <p class="mt-2 text-xl text-blue-400">20-22 de Novembro, Barra do Piraí - Brasil</p>
+    </header>
+
+    <section class="py-12">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Palestrantes</h2>
+            <p class="text-gray-600 mt-4">Os maiores especialistas da área de tecnologia estarão presentes!</p>
+
+            <div class="mt-8 flex flex-col md:flex-row justify-around items-center md:items-stretch space-y-8 md:space-y-0 md:space-x-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-64 flex flex-col justify-between">
+                    <img class="w-32 h-32 mx-auto rounded-full" src="./imgs/luis.jpg" alt="Palestrante 1">
+                    <h3 class="text-xl font-semibold text-blue-500 mt-4">Luís Gustavo</h3>
+                    <p class="text-gray-600 mt-2">Especialista em Java.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg w-64 flex flex-col justify-between">
+                    <img class="w-32 h-32 mx-auto rounded-full" src="./imgs/caua.jpg" alt="Palestrante 2">
+                    <h3 class="text-xl font-semibold text-blue-500 mt-4">Cauã Casali</h3>
+                    <p class="text-gray-600 mt-2">Especialista em Python</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg w-64 flex flex-col justify-between">
+                    <img class="w-32 h-32 mx-auto rounded-full" src="./imgs/matheus.jpg" alt="Palestrante 3">
+                    <h3 class="text-xl font-semibold text-blue-500 mt-4">Matheus Figueired</h3>
+                    <p class="text-gray-600 mt-2">Especialista em PHP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-blue-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Programação</h2>
+            <p class="text-gray-600 mt-4">Confira os principais horários do evento:</p>
+
+            <div class="mt-8">
+                <div class="flex flex-col items-center">
+                    <div class="flex flex-col md:flex-row items-center md:justify-between w-full border-b border-gray-300 py-4">
+                        <span class="text-xl font-bold text-blue-500">20 de Novembro</span>
+                        <span class="text-gray-700">Abertura e Boas-vindas</span>
+                        <span class="text-gray-500">9:00 - 9:30</span>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center md:justify-between w-full border-b border-gray-300 py-4">
+                        <span class="text-xl font-bold text-blue-500">21 de Novembro</span>
+                        <span class="text-gray-700">Palestra: O Futuro da IA</span>
+                        <span class="text-gray-500">10:00 - 11:00</span>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center md:justify-between w-full border-b border-gray-300 py-4">
+                        <span class="text-xl font-bold text-blue-500">22 de Novembro</span>
+                        <span class="text-gray-700">Workshop: Cloud e DevOps</span>
+                        <span class="text-gray-500">14:00 - 16:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Inscrições</h2>
+            <p class="text-gray-600 mt-4">Garanta sua vaga no TechFest 2024!</p>
+
+            <form class="mt-8 space-y-4 max-w-md mx-auto">
+                <input type="text" placeholder="Nome Completo" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <input type="email" placeholder="E-mail" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition">Inscreva-se</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="py-12 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold">Local do Evento</h2>
+            <p class="mt-4">TechFest 2024 será realizado na praça Nilo Peçanha em Barra do Piraí.</p>
+            <p class="mt-4">Endereço: Praça Nilo Peçanha, Barra do Piraí, RJ</p>
+            
+            <iframe class="mt-6 mx-auto rounded-lg shadow-lg w-full h-64" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2192.2456631130913!2d-43.824803600561296!3d-22.470277684737674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1725827605120!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <h3 class="text-2xl font-semibold mt-8">Hospedagem</h3>
+            <p class="mt-4">Confira opções de hotéis próximos ao evento:</p>
+            <ul class="mt-4 space-y-2">
+                <li>Hotel Hanna Palace - 200m do local</li>
+                <li>Blue Lemes - 500m do local</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p>&copy; 2024 TechFest. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

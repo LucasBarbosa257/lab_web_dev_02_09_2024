@@ -1,22 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café e Conforto</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café & Conforto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <img src="./img/logo.png">
-        </nav>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-yellow-600 text-white py-8 text-center">
+        <h1 class="text-4xl font-bold">Café & Conforto</h1>
+        <p class="mt-2 text-xl">O melhor café da cidade</p>
     </header>
 
-    <main>
-        <section>
-            <h1>O melhor café da cidade!</h1>
-        </section>
-    </main>
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Nosso Menu</h2>
+            <p class="text-gray-600 mt-4">Experimente nossos cafés especiais e lanches deliciosos.</p>
+            
+            <div class="mt-8 flex flex-col md:flex-row justify-around items-center md:items-stretch space-y-8 md:space-y-0 md:space-x-8">
+            <!-- Café 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg w-64 flex flex-col justify-between">
+                <h3 class="text-xl font-semibold text-yellow-600">Café Expresso</h3>
+                <p class="text-gray-600 mt-2">Um clássico para os amantes de café forte e puro.</p>
+                <span class="block mt-4 text-lg font-bold text-gray-800">R$12,50</span>
+            </div>
+            <!-- Café 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg w-64 flex flex-col justify-between">
+                <h3 class="text-xl font-semibold text-yellow-600">Cappuccino</h3>
+                <p class="text-gray-600 mt-2">Perfeito equilíbrio entre leite vaporizado e café.</p>
+                <span class="block mt-4 text-lg font-bold text-gray-800">R$15,00</span>
+            </div>
+            <!-- Lanche 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg w-64 flex flex-col justify-between">
+                <h3 class="text-xl font-semibold text-yellow-600">Bolo de Cenoura</h3>
+                <p class="text-gray-600 mt-2">Doce e fofinho, perfeito para acompanhar o café.</p>
+                <span class="block mt-4 text-lg font-bold text-gray-800">R$18,90</span>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-yellow-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Nosso Espaço Aconchegante</h2>
+            <p class="text-gray-600 mt-4">Perfeito para ler, trabalhar ou relaxar com um bom café.</p>
+
+            <div class="mt-8 flex flex-col md:flex-row justify-around items-center space-y-6 md:space-y-0 md:space-x-6">
+            <img class="w-full md:w-1/3 h-64 object-cover rounded-lg shadow-lg" src="https://conscienciacafe.com.br/wp-content/uploads/2023/05/pessoa-lendo-e-tomando-cafe.jpg" alt="Pessoa lendo no café">
+            <img class="w-full md:w-1/3 h-64 object-cover rounded-lg shadow-lg" src="https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2023/09/pessoas-bebendo-cafe-no-refeitorio-espacoso.jpg" alt="Pessoa trabalhando no café">
+            <img class="w-full md:w-1/3 h-64 object-cover rounded-lg shadow-lg" src="https://conscienciacafe.com.br/wp-content/uploads/2023/06/Pessoas-trabalhando-em-cafeteria-1024x683.jpg" alt="Espaço acolhedor da cafeteria">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Nos Encontre</h2>
+            <p class="text-gray-600 mt-4">Estamos localizados no coração da cidade. Venha nos visitar!</p>
+            <iframe class="mt-6 mx-auto rounded-lg shadow-lg w-full h-64" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.2762620662837!2d-43.825968480724164!3d-22.467711104707192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9eb5a2c1639fb1%3A0x523a84a1ceed8148!2sCasa%20Mia%20Caf%C3%A9%20(cafeteria%20e%20restaurante)!5e0!3m2!1spt-BR!2sbr!4v1725826181440!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <section class="py-12 bg-yellow-600 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold">Contato</h2>
+            <p class="mt-4">Entre em contato para reservar mesas ou pedir informações.</p>
+
+            <form class="mt-8 space-y-4">
+                <input type="text" placeholder="Nome" class="w-full p-3 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent">
+                <input type="email" placeholder="E-mail" class="w-full p-3 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent">
+                <textarea placeholder="Mensagem" class="w-full p-3 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent" rows="4"></textarea>
+                <button type="submit" class="w-full bg-gray-800 text-white p-3 rounded-lg hover:bg-gray-900 transition">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p>&copy; 2024 Café & Conforto. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
