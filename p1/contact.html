@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queimadas no Brasil | Contato</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Importa o código javascript que insere a navbar e o footer -->
+    <script src="./assets/partials.js"></script>
+
+    <!-- Importa o código javascript que controla o menu mobile -->
+    <script src="./assets/mobile-menu.js"></script>
+</head>
+
+<body class="text-lg">
+    <div id="navbar"></div>
+
+    <section id="contato" class="bg-white p-8">
+        <div class="flex flex-col container mx-auto">
+            <h1 class="text-4xl font-bold mb-4">Contato</h1>
+            <p class="mb-6">
+                Se você tiver dúvidas, sugestões ou quiser saber mais sobre o tema das queimadas, entre em contato conosco. 
+                Preencha o formulário abaixo e nós responderemos o mais breve possível.
+            </p>
+    
+            <form class="flex flex-col mb-10">
+                <label for="nome" class="mb-2 font-semibold">Nome:</label>
+                <input type="text" id="nome" class="border border-gray-300 p-2 mb-4 rounded" placeholder="Seu Nome" required>
+    
+                <label for="email" class="mb-2 font-semibold">E-mail:</label>
+                <input type="email" id="email" class="border border-gray-300 p-2 mb-4 rounded" placeholder="Seu E-mail" required>
+    
+                <label for="mensagem" class="mb-2 font-semibold">Mensagem:</label>
+                <textarea id="mensagem" class="border border-gray-300 p-2 mb-4 rounded" rows="5" placeholder="Sua Mensagem" required></textarea>
+    
+                <button type="button" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                    Enviar Mensagem
+                </button>
+            </form>
+    
+            <h2 class="text-3xl font-bold mb-4">Informações de Contato</h2>
+            <p class="mb-2"><strong>Endereço:</strong> Universidade Severino Sombra, Vassouras, Rio de Janeiro.</p>
+            <p class="mb-2"><strong>Redes Sociais:</strong></p>
+            <ul class="list-disc list-inside mb-6 font-semibold">
+                <li><a href="#" class="text-green-500 hover:underline">Facebook</a></li>
+                <li><a href="#" class="text-green-500 hover:underline">Instagram</a></li>
+                <li><a href="#" class="text-green-500 hover:underline">Twitter</a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <div id="footer"></div>
+</body>
+
+</html>
