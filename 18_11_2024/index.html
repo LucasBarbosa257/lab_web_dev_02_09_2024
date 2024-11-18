@@ -55,24 +55,19 @@
 
         // Função para atualizar o display com o novo resultado
         function appendValue(value) {
-            if (display.textContent === '0') {
-                display.textContent = value;
-            } else {
-                display.textContent += value;
-            }
+            display.textContent === '0' ? display.textContent = value : display.textContent += value;
         }
 
+        // Função para deletar o último caractere
         function deleteLastCharacter() {
-            display.textContent = display.textContent.slice(0, -1)
+            display.textContent !== '0' ? display.textContent = display.textContent.slice(0, -1) : null
+            
+            display.textContent.length == '0' ? clearDisplay() : display.textContent = display.textContent;
         }
 
         // Função que faz o calculo utilizando os números e sinais recebidos
         function calculate() {
-            try {
-                display.textContent = eval(display.textContent.replace('×', '*').replace('÷', '/'));
-            } catch (error) {
-                display.textContent = 'Error';
-            }
+            display.textContent = eval(display.textContent.replace('×', '*').replace('÷', '/'));
         }
     </script>
 </body>
