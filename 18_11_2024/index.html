@@ -41,6 +41,7 @@
 
             <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-36 col-span-2 flex items-center justify-center" onclick="appendValue('0')">0</button>
             <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('.')">.</button>
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="deleteLastCharacter()">←</button>
         </div>
     </div>
 
@@ -59,6 +60,10 @@
             } else {
                 display.textContent += value;
             }
+        }
+
+        function deleteLastCharacter() {
+            display.textContent = display.textContent.slice(0, -1)
         }
 
         // Função que faz o calculo utilizando os números e sinais recebidos
