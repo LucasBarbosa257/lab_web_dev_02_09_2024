@@ -1,72 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Personalização adicional */
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        } 
+    </style>
 </head>
 <body class="bg-gray-900 flex items-center justify-center min-h-screen text-white">
-  <div class="bg-gray-800 p-5 rounded-lg shadow-lg w-80">
-    <!-- Display -->
-    <div class="bg-gray-700 text-right text-3xl p-4 rounded mb-6 h-16 flex items-center justify-end">
-      <span id="display" class="text-white">0</span>
+    <div class="bg-gray-800 p-5 rounded-lg shadow-lg w-80">
+        <div class="bg-gray-700 text-right text-3xl p-4 rounded mb-6 h-16 flex items-center justify-end">
+            <span id="display" class="text-white">0</span>
+        </div>
+
+        <div class="grid grid-cols-4 gap-3">
+
+        <!-- Botões da calculadora -->
+        <button class="bg-gray-600 text-red-400 text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="clearDisplay()">C</button>
+            <button class="bg-gray-600 text-blue-400 text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('/')">÷</button>
+            <button class="bg-gray-600 text-blue-400 text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('*')">×</button>
+            <button class="bg-orange-500 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('-')">−</button>
+
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('7')">7</button>
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('8')">8</button>
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('9')">9</button>
+            <button class="bg-orange-500 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('+')">+</button>
+
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('4')">4</button>
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('5')">5</button>
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('6')">6</button>
+            <button class="bg-orange-500 text-white text-xl rounded-full h-36 flex items-center justify-center row-span-2" onclick="calculate()">=</button>
+
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('1')">1</button>
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('2')">2</button>
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('3')">3</button>
+
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-36 col-span-2 flex items-center justify-center" onclick="appendValue('0')">0</button>
+            <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('.')">.</button>
+        </div>
     </div>
-    <!-- Buttons -->
-    <div class="grid grid-cols-4 gap-3">
-      <!-- Row 1 -->
-      <button class="bg-gray-600 text-red-400 text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="clearDisplay()">C</button>
-      <button class="bg-gray-600 text-blue-400 text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('/')">÷</button>
-      <button class="bg-gray-600 text-blue-400 text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('*')">×</button>
-      <button class="bg-orange-500 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('-')">−</button>
-      <!-- Row 2 -->
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('7')">7</button>
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('8')">8</button>
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('9')">9</button>
-      <button class="bg-orange-500 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('+')">+</button>
-      <!-- Row 3 -->
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('4')">4</button>
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('5')">5</button>
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('6')">6</button>
-      <button class="bg-orange-500 text-white text-xl rounded-full h-36 flex items-center justify-center row-span-2" onclick="calculate()">=</button>
-      <!-- Row 4 -->
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('1')">1</button>
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('2')">2</button>
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('3')">3</button>
-      <!-- Row 5 -->
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-36 col-span-2 flex items-center justify-center" onclick="appendValue('0')">0</button>
-      <button class="bg-gray-700 text-white text-xl rounded-full h-16 w-16 flex items-center justify-center" onclick="appendValue('.')">.</button>
-    </div>
-  </div>
 
-  <script>
-    const display = document.getElementById('display');
+    <script>
+        const display = document.getElementById('display');
 
-    function clearDisplay() {
-      display.textContent = '0';
-    }
+        // Função para limpar o display e mostrar 0
+        function clearDisplay() {
+            display.textContent = '0';
+        }
 
-    function appendValue(value) {
-      if (display.textContent === '0') {
-        display.textContent = value;
-      } else {
-        display.textContent += value;
-      }
-    }
+        // Função para atualizar o display com o novo resultado
+        function appendValue(value) {
+            if (display.textContent === '0') {
+                display.textContent = value;
+            } else {
+                display.textContent += value;
+            }
+        }
 
-    function calculate() {
-      try {
-        display.textContent = eval(display.textContent.replace('×', '*').replace('÷', '/'));
-      } catch (error) {
-        display.textContent = 'Error';
-      }
-    }
-  </script>
+        // Função que faz o calculo utilizando os números e sinais recebidos
+        function calculate() {
+            try {
+                display.textContent = eval(display.textContent.replace('×', '*').replace('÷', '/'));
+            } catch (error) {
+                display.textContent = 'Error';
+            }
+        }
+    </script>
 </body>
 </html>
