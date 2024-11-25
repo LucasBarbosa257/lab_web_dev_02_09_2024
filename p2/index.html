@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shingeki no Kyojin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Shingeki no Kyojin</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#characters">Personagens</a></li>
+                <li><a href="#episodes">Episódios</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="banner">
+            <h2>Bem-vindo ao mundo de Shingeki no Kyojin</h2>
+            <p>Lute pela sobrevivência contra os Titãs em uma jornada emocionante!</p>
+        </section>
+
+        <section id="characters" class="characters">
+            <h2>Personagens Principais</h2>
+            <div class="character-gallery">
+                <div class="character-card" data-name="Eren">
+                    <img src="eren.jpg" alt="Eren Yeager">
+                    <h3>Eren Yeager</h3>
+                    <p>O protagonista que luta pela liberdade.</p>
+                </div>
+                <div class="character-card" data-name="Mikasa">
+                    <img src="mikasa.jpg" alt="Mikasa Ackerman">
+                    <h3>Mikasa Ackerman</h3>
+                    <p>A guerreira leal e habilidosa.</p>
+                </div>
+                <div class="character-card" data-name="Armin">
+                    <img src="armin.jpg" alt="Armin Arlert">
+                    <h3>Armin Arlert</h3>
+                    <p>O estrategista brilhante.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="episodes" class="episodes">
+            <h2>Episódios Favoritos</h2>
+            <div class="episode-card">
+                <img src="episode1.jpg" alt="Episódio 1">
+                <h3>Episódio 1: "A Queda do Muro"</h3>
+                <p>O início da luta contra os Titãs.</p>
+                <button class="watch-trailer" data-video="trailer1">Assistir ao Trailer</button>
+            </div>
+            <div class="episode-card">
+                <img src="episode2.jpg" alt="Episódio 2">
+                <h3>Episódio 2: "A Fúria do Titã"</h3>
+                <p>Eren descobre um segredo chocante.</p>
+                <button class="watch-trailer" data-video="trailer2">Assistir ao Trailer</button>
+            </div>
+            <div class="episode-card">
+                <img src="episode3.jpg" alt="Episódio 3">
+                <h3>Episódio 3: "Rumo ao Horizonte"</h3>
+                <p>Armin assume um papel decisivo.</p>
+                <button class="watch-trailer" data-video="trailer3">Assistir ao Trailer</button>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Entre em Contato</h2>
+            <form id="contact-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="success-message"></p>
+        </section>
+    </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
