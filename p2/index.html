@@ -1,91 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shingeki no Kyojin</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <nav class="navbar">
-            <h1>Shingeki no Kyojin</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#characters">Personagens</a></li>
-                <li><a href="#episodes">Episódios</a></li>
-                <li><a href="#contact">Contato</a></li>
+<body class="bg-gray-800 text-yellow-400 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-gray-800 fixed top-0 w-full flex items-center justify-between px-6 py-4 shadow-lg z-10">
+        <h1 class="text-2xl font-bold">Shingeki no Kyojin</h1>
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="md:hidden text-yellow-400 hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+        <!-- Navigation -->
+        <nav id="menu" class="hidden md:flex flex-col md:flex-row md:items-center gap-4 md:gap-10 absolute md:relative top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent md:top-0 px-6 md:px-0">
+            <ul class="flex flex-col md:flex-row gap-4">
+                <li><a href="#home" class="hover:text-white transition">Início</a></li>
+                <li><a href="#description" class="hover:text-white transition">Descrição</a></li>
+                <li><a href="#characters" class="hover:text-white transition">Personagens</a></li>
+                <li><a href="#episodes" class="hover:text-white transition">Episódios</a></li>
+                <li><a href="#contact" class="hover:text-white transition">Contato</a></li>
             </ul>
         </nav>
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">
+            Alterar Tema
+        </button>
     </header>
 
-    <main>
-        <section id="home" class="banner">
-            <h2>Bem-vindo ao mundo de Shingeki no Kyojin</h2>
-            <p>Lute pela sobrevivência contra os Titãs em uma jornada emocionante!</p>
-        </section>
+    <!-- Banner -->
+    <section id="home" class="bg-cover bg-top h-[35rem] text-center flex flex-col items-center justify-center text-white" style="background-image: url('./assets/banner.jpg');">
+        <h2 class="text-5xl font-bold mb-4" style="text-shadow: 4px 4px 0 #000, -4px 4px 0 #000, 4px -4px 0 #000, -4px -4px 0 #000;">Bem-vindo ao mundo de Shingeki no Kyojin</h2>
+    </section>
 
-        <section id="characters" class="characters">
-            <h2>Personagens Principais</h2>
-            <div class="character-gallery">
-                <div class="character-card" data-name="Eren">
-                    <img src="eren.jpg" alt="Eren Yeager">
-                    <h3>Eren Yeager</h3>
-                    <p>O protagonista que luta pela liberdade.</p>
-                </div>
-                <div class="character-card" data-name="Mikasa">
-                    <img src="mikasa.jpg" alt="Mikasa Ackerman">
-                    <h3>Mikasa Ackerman</h3>
-                    <p>A guerreira leal e habilidosa.</p>
-                </div>
-                <div class="character-card" data-name="Armin">
-                    <img src="armin.jpg" alt="Armin Arlert">
-                    <h3>Armin Arlert</h3>
-                    <p>O estrategista brilhante.</p>
-                </div>
+    <!-- Descrição -->
+    <section id="description" class="bg-gray-900 text-left py-16 px-36">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-4">Sobre o Mundo dos Titãs</h2>
+        <div class="flex flex-col gap-5">
+            <p class="text-xl text-gray-400">
+                Shingeki no Kyojin (Attack on Titan) é um anime baseado no mangá de Hajime Isayama, lançado em 2009. A história se passa em um mundo pós-apocalíptico onde a humanidade vive cercada por enormes muralhas para se proteger de criaturas gigantes chamadas Titãs, que devoram humanos sem motivo aparente.
+            </p>
+            <p class="text-xl text-gray-400">
+                O protagonista, Eren Yeager, vive na muralha mais externa e sonha em explorar o mundo além das barreiras. Após um Titã colossal destruir sua cidade e causar a morte de sua mãe, Eren decide se juntar ao exército, junto com seus amigos Mikasa Ackerman e Armin Arlert, para lutar contra os Titãs.
+            </p>
+            <p class="text-xl text-gray-400">
+                Conforme a trama avança, segredos chocantes sobre os Titãs, a origem das muralhas e o verdadeiro inimigo da humanidade são revelados. A história explora temas como liberdade, sacrifício e as complexidades da guerra, além de reviravoltas impressionantes e um enredo emocionalmente intenso.
+            </p>
+            <p class="text-xl text-gray-400">
+                O anime é famoso por sua animação espetacular, cenas de ação épicas e personagens bem desenvolvidos. É um dos títulos mais populares e aclamados da última década, conquistando fãs ao redor do mundo.
+            </p>
+        </div>
+    </section>
+
+    <!-- Personagens -->
+    <section id="characters" class="py-16 bg-gray-900 text-left px-36">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-16">Personagens Principais</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-800 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition">
+                <img src="./assets/eren.jpg" alt="Eren Yeager" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-2xl font-bold text-yellow-400">Eren Yeager</h3>
+                <p class="text-lg text-gray-400">O protagonista determinado a destruir todos os Titãs.</p>
             </div>
-        </section>
-
-        <section id="episodes" class="episodes">
-            <h2>Episódios Favoritos</h2>
-            <div class="episode-card">
-                <img src="episode1.jpg" alt="Episódio 1">
-                <h3>Episódio 1: "A Queda do Muro"</h3>
-                <p>O início da luta contra os Titãs.</p>
-                <button class="watch-trailer" data-video="trailer1">Assistir ao Trailer</button>
+            <div class="bg-gray-800 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition">
+                <img src="./assets/mikasa.webp" alt="Eren Yeager" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-2xl font-bold text-yellow-400">Eren Yeager</h3>
+                <p class="text-lg text-gray-400">O protagonista determinado a destruir todos os Titãs.</p>
             </div>
-            <div class="episode-card">
-                <img src="episode2.jpg" alt="Episódio 2">
-                <h3>Episódio 2: "A Fúria do Titã"</h3>
-                <p>Eren descobre um segredo chocante.</p>
-                <button class="watch-trailer" data-video="trailer2">Assistir ao Trailer</button>
+            <div class="bg-gray-800 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition">
+                <img src="./assets/armin.jpg" alt="Eren Yeager" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-2xl font-bold text-yellow-400">Eren Yeager</h3>
+                <p class="text-lg text-gray-400">O protagonista determinado a destruir todos os Titãs.</p>
             </div>
-            <div class="episode-card">
-                <img src="episode3.jpg" alt="Episódio 3">
-                <h3>Episódio 3: "Rumo ao Horizonte"</h3>
-                <p>Armin assume um papel decisivo.</p>
-                <button class="watch-trailer" data-video="trailer3">Assistir ao Trailer</button>
+        </div>
+    </section>
+
+    <!-- Episódios -->
+    <section id="episodes" class="py-16 bg-gray-800 text-center">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-8">Episódios Favoritos</h2>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-8 px-8">
+            <div class="bg-gray-900 border-2 border-yellow-400 rounded-lg p-6 max-w-sm">
+                <img src="ep1.jpg" alt="Episódio 1" class="rounded mb-4">
+                <h3 class="text-2xl font-bold text-yellow-400">Episódio 1: A Queda de Shiganshina</h3>
+                <p class="text-lg text-gray-400">O início de tudo: quando os Titãs invadem a muralha Maria.</p>
+                <button class="mt-4 bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">Assistir ao trailer</button>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="contact">
-            <h2>Entre em Contato</h2>
-            <form id="contact-form">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
+    <!-- Contato -->
+    <section id="contact" class="py-16 bg-gray-900 text-center">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-8">Entre em Contato</h2>
+        <form class="flex flex-col gap-4 max-w-md mx-auto">
+            <label class="text-left text-yellow-400">Nome</label>
+            <input type="text" class="p-3 bg-gray-800 text-white border-2 border-yellow-400 rounded focus:outline-none focus:border-white">
+            <label class="text-left text-yellow-400">Email</label>
+            <input type="email" class="p-3 bg-gray-800 text-white border-2 border-yellow-400 rounded focus:outline-none focus:border-white">
+            <label class="text-left text-yellow-400">Mensagem</label>
+            <textarea class="p-3 bg-gray-800 text-white border-2 border-yellow-400 rounded focus:outline-none focus:border-white" rows="5"></textarea>
+            <button type="submit" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">Enviar</button>
+        </form>
+    </section>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" required></textarea>
-                
-                <button type="submit">Enviar</button>
-            </form>
-            <p id="success-message"></p>
-        </section>
-    </main>
+    <script>
+        // Toggle Menu Visibility
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
 
-  <script src="script.js"></script>
+        // Toggle Theme
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('bg-gray-800');
+            body.classList.toggle('text-yellow-400');
+            body.classList.toggle('bg-white');
+            body.classList.toggle('text-gray-800');
+        });
+    </script>
 </body>
 </html>
