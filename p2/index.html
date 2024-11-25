@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shingeki no Kyojin</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body class="bg-gray-800 text-yellow-400 transition-colors duration-300">
+<body class="bg-gray-800 text-gray-400 transition-colors duration-300">
     <!-- Header -->
-    <header class="bg-gray-800 fixed top-0 w-full flex items-center justify-between px-6 py-4 shadow-lg z-10">
-        <h1 class="text-2xl font-bold">Shingeki no Kyojin</h1>
+    <header class="bg-gray-800 fixed top-0 w-full flex items-center justify-between px-6 py-4 shadow-lg z-10 text-yellow-400">
+        <p class="text-2xl font-bold">Shingeki no Kyojin</p>
         <!-- Mobile Menu Button -->
         <button id="menu-toggle" class="md:hidden text-yellow-400 hover:text-white">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
@@ -18,110 +19,199 @@
         </button>
         <!-- Navigation -->
         <nav id="menu" class="hidden md:flex flex-col md:flex-row md:items-center gap-4 md:gap-10 absolute md:relative top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent md:top-0 px-6 md:px-0">
-            <ul class="flex flex-col md:flex-row gap-4">
+            <ul class="flex flex-col md:flex-row gap-4 text-lg">
                 <li><a href="#home" class="hover:text-white transition">Início</a></li>
                 <li><a href="#description" class="hover:text-white transition">Descrição</a></li>
                 <li><a href="#characters" class="hover:text-white transition">Personagens</a></li>
                 <li><a href="#episodes" class="hover:text-white transition">Episódios</a></li>
                 <li><a href="#contact" class="hover:text-white transition">Contato</a></li>
             </ul>
+            <button id="theme-toggle" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition my-5">
+                Alterar Tema
+            </button>
         </nav>
         <!-- Theme Toggle Button -->
-        <button id="theme-toggle" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">
-            Alterar Tema
-        </button>
     </header>
 
     <!-- Banner -->
     <section id="home" class="bg-cover bg-top h-[35rem] text-center flex flex-col items-center justify-center text-white" style="background-image: url('./assets/banner.jpg');">
-        <h2 class="text-5xl font-bold mb-4" style="text-shadow: 4px 4px 0 #000, -4px 4px 0 #000, 4px -4px 0 #000, -4px -4px 0 #000;">Bem-vindo ao mundo de Shingeki no Kyojin</h2>
+        <h1 class="text-5xl font-bold mb-4" style="text-shadow: 4px 4px 0 #000, -4px 4px 0 #000, 4px -4px 0 #000, -4px -4px 0 #000;">Bem-vindo ao mundo de Shingeki no Kyojin</h1>
     </section>
 
     <!-- Descrição -->
-    <section id="description" class="bg-gray-900 text-left py-16 px-36">
-        <h2 class="text-4xl font-bold text-yellow-400 mb-4">Sobre o Mundo dos Titãs</h2>
+    <section id="description" class="bg-gray-900 text-center lg:text-left py-16 px-10 lg:px-36">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-10">Sobre o Mundo dos Titãs</h2>
         <div class="flex flex-col gap-5">
-            <p class="text-xl text-gray-400">
+            <p class="text-xl">
                 Shingeki no Kyojin (Attack on Titan) é um anime baseado no mangá de Hajime Isayama, lançado em 2009. A história se passa em um mundo pós-apocalíptico onde a humanidade vive cercada por enormes muralhas para se proteger de criaturas gigantes chamadas Titãs, que devoram humanos sem motivo aparente.
             </p>
-            <p class="text-xl text-gray-400">
+            <p class="text-xl">
                 O protagonista, Eren Yeager, vive na muralha mais externa e sonha em explorar o mundo além das barreiras. Após um Titã colossal destruir sua cidade e causar a morte de sua mãe, Eren decide se juntar ao exército, junto com seus amigos Mikasa Ackerman e Armin Arlert, para lutar contra os Titãs.
             </p>
-            <p class="text-xl text-gray-400">
+            <p class="text-xl">
                 Conforme a trama avança, segredos chocantes sobre os Titãs, a origem das muralhas e o verdadeiro inimigo da humanidade são revelados. A história explora temas como liberdade, sacrifício e as complexidades da guerra, além de reviravoltas impressionantes e um enredo emocionalmente intenso.
             </p>
-            <p class="text-xl text-gray-400">
+            <p class="text-xl">
                 O anime é famoso por sua animação espetacular, cenas de ação épicas e personagens bem desenvolvidos. É um dos títulos mais populares e aclamados da última década, conquistando fãs ao redor do mundo.
             </p>
         </div>
     </section>
 
     <!-- Personagens -->
-    <section id="characters" class="py-16 bg-gray-900 text-left px-36">
-        <h2 class="text-4xl font-bold text-yellow-400 mb-16">Personagens Principais</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-800 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition">
-                <img src="./assets/eren.jpg" alt="Eren Yeager" class="w-32 h-32 rounded-full mx-auto mb-4">
+    <section id="characters" class="py-16 bg-gray-900 text-center lg:text-left px-10 lg:px-36">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-10">Personagens</h2>
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="max-w-[380px] bg-gray-800 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition cursor-pointer" data-character="eren">
+                <img src="./assets/eren.jpg" alt="Eren Yeager" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
                 <h3 class="text-2xl font-bold text-yellow-400">Eren Yeager</h3>
-                <p class="text-lg text-gray-400">O protagonista determinado a destruir todos os Titãs.</p>
+                <p class="text-lg">O protagonista determinado a destruir todos os Titãs.</p>
             </div>
-            <div class="bg-gray-800 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition">
-                <img src="./assets/mikasa.webp" alt="Eren Yeager" class="w-32 h-32 rounded-full mx-auto mb-4">
-                <h3 class="text-2xl font-bold text-yellow-400">Eren Yeager</h3>
-                <p class="text-lg text-gray-400">O protagonista determinado a destruir todos os Titãs.</p>
+            <div class="max-w-[380px] bg-gray-800 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition cursor-pointer" data-character="mikasa">
+                <img src="./assets/mikasa.webp" alt="Mikasa Ackerman" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-2xl font-bold text-yellow-400">Mikasa Ackerman</h3>
+                <p class="text-lg">A feroz amiga de infância de Eren, com habilidades excepcionais.</p>
             </div>
-            <div class="bg-gray-800 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition">
-                <img src="./assets/armin.jpg" alt="Eren Yeager" class="w-32 h-32 rounded-full mx-auto mb-4">
-                <h3 class="text-2xl font-bold text-yellow-400">Eren Yeager</h3>
-                <p class="text-lg text-gray-400">O protagonista determinado a destruir todos os Titãs.</p>
+            <div class="max-w-[380px] bg-gray-800 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition cursor-pointer" data-character="armin">
+                <img src="./assets/armin.jpg" alt="Armin Arlert" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-2xl font-bold text-yellow-400">Armin Arlert</h3>
+                <p class="text-lg">O estrategista e amigo leal de Eren e Mikasa.</p>
             </div>
         </div>
     </section>
 
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center pt-36 lg:pt-12 z-50">
+        <div id="modal-content" class="bg-gray-900 p-10 rounded-lg max-w-4xl mx-auto text-white">
+            <!-- Content will be injected here -->
+        </div>
+    </div>
+
     <!-- Episódios -->
-    <section id="episodes" class="py-16 bg-gray-800 text-center">
-        <h2 class="text-4xl font-bold text-yellow-400 mb-8">Episódios Favoritos</h2>
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-8 px-8">
-            <div class="bg-gray-900 border-2 border-yellow-400 rounded-lg p-6 max-w-sm">
-                <img src="ep1.jpg" alt="Episódio 1" class="rounded mb-4">
-                <h3 class="text-2xl font-bold text-yellow-400">Episódio 1: A Queda de Shiganshina</h3>
-                <p class="text-lg text-gray-400">O início de tudo: quando os Titãs invadem a muralha Maria.</p>
-                <button class="mt-4 bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">Assistir ao trailer</button>
+    <section id="episodes" class="py-16 bg-gray-800 text-center lg:text-left px-10 lg:px-36">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-10">Episódios Favoritos</h2>
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="max-w-[380px] bg-gray-900 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition">
+                <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=70,width=320,height=180/catalog/crunchyroll/af666f0f1d7dac4aea8fd7b548419e00.jpg" alt="S1E17: Titã Fêmea - 57ª Expedição além das muralhas (1)" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2">S1E17: Titã Fêmea - 57ª Expedição além das muralhas (1)</h3>
+                <p class="text-lg">A 57ª expedição para fora das muralhas começa quando Eren e os demais da 104ª Unidade de Cadetes entram no Reconhecimento.</p>
+                <a href="https://www.crunchyroll.com/pt-br/watch/G6DQVNXDR/female-titan---57th-expedition-beyond-the-walls-1" target="_blank" class="cursor-pointer inline-block mt-4 px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition duration-300">Ver episódio</a>
+            </div>
+            <div class="max-w-[380px] bg-gray-900 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition">
+                <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=70,width=320,height=180/catalog/crunchyroll/554197194719955e2f746fc300540f32.jpg" alt="S1E21 - Golpe esmagador - 57ª Expedição além das muralhas (5)" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2">S1E21 - Golpe esmagador - 57ª Expedição além das muralhas (5)</h3>
+                <p class="text-lg">A Titã Fêmea se deixa devorar por outros titãs e some no vapor. A pessoa dentro dela está com o mesmo uniforme dos demais soldados do Reconhecimento.</p>
+                <a href="https://www.crunchyroll.com/pt-br/watch/G69PXMK8Y/crushing-blow---57th-expedition-beyond-the-walls-5" target="_blank" class="cursor-pointer inline-block mt-4 px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition duration-300">Ver episódio</a>
+            </div>
+            <div class="max-w-[380px] bg-gray-900 border-2 border-yellow-400 rounded-lg p-6 text-center hover:scale-105 transform transition">
+                <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=70,width=320,height=180/catalog/crunchyroll/328f563ae2a81d43520f380e1dbe2ba9.jpg" alt="S3E50 - A Cidade Onde Tudo Começou" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2">S3E50 - A Cidade Onde Tudo Começou</h3>
+                <p class="text-lg">A operação para retomar a Muralha Maria começa em Shiganshina, a cidade onde tudo começou. Mas quando o Reconhecimento chega, alguma coisa parece errada.</p>
+                <a href="https://www.crunchyroll.com/pt-br/watch/GY79JJEMR/the-town-where-everything-began" target="_blank" class="cursor-pointer inline-block mt-4 px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition duration-300">Ver episódio</a>
             </div>
         </div>
     </section>
 
     <!-- Contato -->
-    <section id="contact" class="py-16 bg-gray-900 text-center">
+    <section id="contact" class="py-16 bg-gray-900 text-center px-10 lg:px-0">
         <h2 class="text-4xl font-bold text-yellow-400 mb-8">Entre em Contato</h2>
-        <form class="flex flex-col gap-4 max-w-md mx-auto">
+        <form id="contact-form" class="flex flex-col gap-4 max-w-md mx-auto">
             <label class="text-left text-yellow-400">Nome</label>
-            <input type="text" class="p-3 bg-gray-800 text-white border-2 border-yellow-400 rounded focus:outline-none focus:border-white">
+            <input id="name" type="text" class="p-3 bg-gray-800 text-white border-2 border-yellow-400 rounded focus:outline-none focus:border-white">
             <label class="text-left text-yellow-400">Email</label>
-            <input type="email" class="p-3 bg-gray-800 text-white border-2 border-yellow-400 rounded focus:outline-none focus:border-white">
+            <input id="email" type="email" class="p-3 bg-gray-800 text-white border-2 border-yellow-400 rounded focus:outline-none focus:border-white">
             <label class="text-left text-yellow-400">Mensagem</label>
-            <textarea class="p-3 bg-gray-800 text-white border-2 border-yellow-400 rounded focus:outline-none focus:border-white" rows="5"></textarea>
-            <button type="submit" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">Enviar</button>
+            <textarea id="message" class="p-3 bg-gray-800 text-white border-2 border-yellow-400 rounded focus:outline-none focus:border-white" rows="4"></textarea>
+            <button id="submit" type="submit" class="bg-yellow-400 text-gray-800 px-6 py-2 rounded hover:bg-yellow-300 transition">Enviar</button>
         </form>
+        <div id="success-message" class="mt-4 text-green-400 hidden">
+            <p>Mensagem enviada com sucesso!</p>
+        </div>
     </section>
 
+    <footer class="bg-gray-900 py-8 text-center">
+        <p>&copy; 2024 Shingeki no Kyojin. Todos os direitos reservados.</p>
+    </footer>
+
     <script>
-        // Toggle Menu Visibility
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        $('#contact-form').submit(function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var message = $('#message').val();
+
+            // Verifica se todos os campos foram preenchidos
+            if (name === "" || email === "" || message === "") {
+                alert("Por favor, preencha todos os campos.");
+            } else {
+                // Se tudo estiver correto, mostra a mensagem de sucesso
+                $('#success-message').removeClass('hidden');
+                $('#contact-form')[0].reset(); // Limpa o formulário após o envio
+                setTimeout(function() {
+                    $('#success-message').addClass('hidden'); // Esconde a mensagem após 5 segundos
+                }, 5000);
+            }
         });
 
-        // Toggle Theme
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('bg-gray-800');
-            body.classList.toggle('text-yellow-400');
-            body.classList.toggle('bg-white');
-            body.classList.toggle('text-gray-800');
+        // Função para rolagem suave ao clicar nos links de navegação
+        $('a[href^="#"]').click(function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do link
+
+            var target = $(this.hash); // Seleciona o destino do link
+
+            // Desliza suavemente para o destino
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
         });
+
+        // Função para alternar o menu no modo mobile
+        $('#menu-toggle').click(function() {
+            $('#menu').toggleClass('hidden');
+        });
+
+        $('[data-character]').click(function() {
+            var character = $(this).data('character');
+
+            var content = '';
+            // Definir o conteúdo para cada personagem
+            if (character === 'eren') {
+                content = `
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-4">Eren Yeager</h3>
+                    <img src="./assets/eren.jpg" alt="Eren Yeager" class="w-48 h-auto self-center mb-4">
+                    <p class="text-lg mb-4">Eren Yeager é o protagonista da série, conhecido por sua determinação em destruir todos os Titãs.</p>
+                    <p class="text-lg">Papel no anime: Eren é um dos membros da 104ª Unidade de Cadetes e posteriormente um membro chave da Tropa de Exploração.</p>
+                    <p class="text-lg">Poderes: Possui a habilidade de se transformar no Titã de Ataque.</p>
+                    <button onclick="closeModal()" class="bg-yellow-400 text-gray-800 px-6 py-2 rounded hover:bg-yellow-300 mt-6">Voltar à Galeria</button>
+                `;
+            } else if (character === 'mikasa') {
+                content = `
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-4">Mikasa Ackerman</h3>
+                    <img src="./assets/mikasa.webp" alt="Mikasa Ackerman" class="w-96 h-auto self-center mb-4">
+                    <p class="text-lg mb-4">Mikasa Ackerman é a amiga de infância de Eren e uma das guerreiras mais habilidosas.</p>
+                    <p class="text-lg">Papel no anime: Mikasa é uma das personagens principais ao longo da série.</p>
+                    <p class="text-lg">Poderes: Não possui poderes.</p>
+                    <button onclick="closeModal()" class="bg-yellow-400 text-gray-800 px-6 py-2 rounded hover:bg-yellow-300 mt-6">Voltar à Galeria</button>
+                `;
+            } else if (character === 'armin') {
+                content = `
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-4">Armin Arlert</h3>
+                    <img src="./assets/armin.jpg" alt="Armin Arlert" class="w-96 h-auto self-center mb-4">
+                    <p class="text-lg mb-4">Armin Arlert é um dos melhores amigos de Eren e Mikasa.</p>
+                    <p class="text-lg">Papel no anime: Armin é fundamental nas estratégias do Reconhecimento.</p>
+                    <p class="text-lg">Poderes: Se torna o Titã Colossal na terceira temporada.</p>
+                    <button onclick="closeModal()" class="bg-yellow-400 text-gray-800 px-6 py-2 rounded hover:bg-yellow-300 mt-6">Voltar à Galeria</button>
+                `;
+            }
+
+            // Inserir o conteúdo no modal e mostrar
+            $('#modal-content').html(content);
+            $('#modal').removeClass('hidden');
+        });
+
+        function closeModal() {
+            $('#modal').addClass('hidden');
+        }
     </script>
 </body>
 </html>
